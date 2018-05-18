@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/Mudislander/docker-templates/master/mudisle/openra.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category></Category>
+  <Date>2018-05-18</Date>
+  <Support></Support>
+  <Name>openra</Name>
+ <Changes></Changes>
+ <Description></Description>
+ <Project>http://openra.net/</Project>
+ <Overview>OpenRA is a project that recreates and modernizes the classic Command &amp;amp; Conquer real time strategy games. We have developed a flexible open source game engine (the OpenRA engine) that provides a common platform for rebuilding and reimagining classic 2D and 2.5D RTS games (the OpenRA mods).</Overview>
+  <Registry>https://hub.docker.com/r/mudislander/openra-docker-server/</Registry>
+  <Repository>docker pull mudislander/openra-docker-server</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1234</HostPort>
+        <ContainerPort>1234</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+  <Environment>
+    <Variable>
+      <Value>Mudisle D2K Server</Value>
+      <Name>Name</Name>
+      <Mode/>
+    </Variable>
+	<Variable>
+      <Value>d2k</Value>
+      <Name>Mod</Name>
+      <Mode/>
+    </Variable>  
+	<Variable>
+      <Value>True</Value>
+      <Name>EnableSingleplayer</Name>
+      <Mode/>
+    </Variable>  
+    <Variable>
+      <Value>True</Value>
+      <Name>AdvertiseOnline</Name>
+      <Mode/>
+    </Variable>	  
+    <Variable>
+      <Value/>
+      <Name>Password</Name>
+      <Mode/>
+    </Variable> 
+	<Variable>
+      <Value/>
+      <Name>Ban</Name>
+      <Mode/>
+    </Variable>
+  </Environment>	  
+  </Data>
+  <Icon>https://raw.githubusercontent.com/Mudislander/docker-templates/master/mudisle/img/openra.svg</Icon>
+</Container>
