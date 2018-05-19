@@ -7,12 +7,12 @@
   <MyIP/>
   <Privileged>false</Privileged>
   <Support/>
-  <Project/>
+  <Project>http://openra.net/</Project>
   <Overview>OpenRA is a project that recreates and modernizes the classic Command &amp;amp; Conquer real time strategy games. We have developed a flexible open source game engine (the OpenRA engine) that provides a common platform for rebuilding and reimagining classic 2D and 2.5D RTS games (the OpenRA mods). </Overview>
   <Category/>
   <WebUI/>
-  <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/Mudislander/docker-templates/master/mudisle/img/openra.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/Mudislander/docker-templates/master/openra.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Mudislander/docker-templates/master/img/openra.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <DateInstalled>1526651383</DateInstalled>
