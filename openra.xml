@@ -89,8 +89,8 @@ OpenRA is a project that recreates and modernizes the classic Command &amp;amp; 
     </Variable>
   </Environment>
   <Config Name="Server Port" Target="1234" Default="1234" Mode="tcp" Description="Port that server listens on" Type="Port" Display="always" Required="true" Mask="false">1234</Config>
-  <Config Name="ListenPort" Target="ListenPort" Default="1234" Mode="" Description="ListenPort for multiple servers " Type="Variable" Display="always" Required="true" Mask="false">ra</Config>
-  <Config Name="ExternalPort" Target="ExternalPort" Default="1234" Mode="" Description="ExternalPort for multiple servers" Type="Variable" Display="always" Required="true" Mask="false">ra</Config>
+  <Config Name="ListenPort" Target="ListenPort" Default="1234" Mode="" Description="ListenPort for multiple servers " Type="Variable" Display="always" Required="true" Mask="false">1234</Config>
+  <Config Name="ExternalPort" Target="ExternalPort" Default="1234" Mode="" Description="ExternalPort for multiple servers" Type="Variable" Display="always" Required="true" Mask="false">1234</Config>
   <Config Name="Server Mod" Target="Mod" Default="ra" Mode="" Description="Game the server runs eg:- 'cnc', 'ra' or 'd2k'" Type="Variable" Display="always" Required="true" Mask="false">ra</Config>
   <Config Name="Server Name" Target="Name" Default="DEDICATED SERVER" Mode="" Description="Name of server to advertise" Type="Variable" Display="always" Required="true" Mask="false">DEDICATED SERVER</Config>
   <Config Name="Ban IP Adresses" Target="Ban" Default="" Mode="" Description="Comma delimited list of banned IP addresses" Type="Variable" Display="advanced" Required="false" Mask="false"/>
