@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>OpenRA</Name>
-  <Repository>mudislander/openra-docker-server</Repository>
-  <Registry>https://hub.docker.com/r/mudislander/openra-docker-server/</Registry>
+  <Repository>rmoriz/openra</Repository>
+  <Registry>https://hub.docker.com/r/rmoriz/openra</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Privileged>false</Privileged>
   <Support>https://lime-technology.com/forums/topic/71751-support-mudislander-openra-server/</Support>
   <Project>http://openra.net/</Project>
-  <Overview>Mudislanders Dockerfile for mounting OpenRA's dedicated server [br][br]&#xD;
+  <Overview>Mudislanders Template for mounting OpenRA's dedicated server by rmoriz [br][br]&#xD;
 OpenRA is a project that recreates and modernizes the classic Command &amp;amp; Conquer real time strategy games. We have developed a flexible open source game engine (the OpenRA engine) that provides a common platform for rebuilding and reimagining classic 2D and 2.5D RTS games (the OpenRA mods). </Overview>
   <Beta>False</Beta>
   <Category>Network:Other</Category>
@@ -23,7 +23,7 @@ OpenRA is a project that recreates and modernizes the classic Command &amp;amp; 
   <DonateLink/>
   <DonateImg/>
   <MinVer/>
-  <Description>Mudislanders Dockerfile for mounting OpenRA's dedicated server [br][br]&#xD;
+  <Description>Mudislanders Template for mounting OpenRA's dedicated server by rmoriz [br][br]&#xD;
 OpenRA is a project that recreates and modernizes the classic Command &amp;amp; Conquer real time strategy games. We have developed a flexible open source game engine (the OpenRA engine) that provides a common platform for rebuilding and reimagining classic 2D and 2.5D RTS games (the OpenRA mods). </Description>
   <Networking>
     <Mode>bridge</Mode>
@@ -37,6 +37,16 @@ OpenRA is a project that recreates and modernizes the classic Command &amp;amp; 
   </Networking>
   <Data/>
   <Environment>
+    <Variable>
+      <Value>1234</Value>
+      <Name>ListenPort</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1234</Value>
+      <Name>ExternalPort</Name>
+      <Mode/>
+    </Variable>
     <Variable>
       <Value>ra</Value>
       <Name>Mod</Name>
@@ -79,6 +89,8 @@ OpenRA is a project that recreates and modernizes the classic Command &amp;amp; 
     </Variable>
   </Environment>
   <Config Name="Server Port" Target="1234" Default="1234" Mode="tcp" Description="Port that server listens on" Type="Port" Display="always" Required="true" Mask="false">1234</Config>
+  <Config Name="ListenPort" Target="ListenPort" Default="1234" Mode="" Description="ListenPort for multiple servers " Type="Variable" Display="always" Required="true" Mask="false">ra</Config>
+  <Config Name="ExternalPort" Target="ExternalPort" Default="1234" Mode="" Description="ExternalPort for multiple servers" Type="Variable" Display="always" Required="true" Mask="false">ra</Config>
   <Config Name="Server Mod" Target="Mod" Default="ra" Mode="" Description="Game the server runs eg:- 'cnc', 'ra' or 'd2k'" Type="Variable" Display="always" Required="true" Mask="false">ra</Config>
   <Config Name="Server Name" Target="Name" Default="DEDICATED SERVER" Mode="" Description="Name of server to advertise" Type="Variable" Display="always" Required="true" Mask="false">DEDICATED SERVER</Config>
   <Config Name="Ban IP Adresses" Target="Ban" Default="" Mode="" Description="Comma delimited list of banned IP addresses" Type="Variable" Display="advanced" Required="false" Mask="false"/>
