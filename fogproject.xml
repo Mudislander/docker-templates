@@ -17,7 +17,7 @@
   <ExtraParams>--security-opt apparmor=mudislander-fogproject</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1553290723</DateInstalled>
+  <DateInstalled>1553292663</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>A free open-source network computer cloning and management solution</Description>
@@ -46,36 +46,16 @@
       <ContainerDir>/tftpboot</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
+    <Volume>
+      <HostDir>/mnt/cache/FOGserver/mysql</HostDir>
+      <ContainerDir>mysql</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
   </Data>
   <Environment>
     <Variable>
       <Value>80</Value>
       <Name>WEB_HOST_PORT</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>fog</Value>
-      <Name>DB_NAME</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>fogusr</Value>
-      <Name>DB_USER</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>f0gp455t4</Value>
-      <Name>DB_PASS</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>DB_ROOTPASS</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>192.168.0.200</Value>
-      <Name>EXTIP</Name>
       <Mode/>
     </Variable>
     <Variable>
@@ -95,13 +75,9 @@
   <Config Name="opt/" Target="/opt/fog" Default="/mnt/cache/FOGserver/opt" Mode="rw" Description="Container Path: /opt/fog" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/FOGserver/opt</Config>
   <Config Name="Image Directory" Target="/images" Default="" Mode="rw" Description="Container Path: /images" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/FOGserver/images</Config>
   <Config Name="/tftpboot:/tftpboot" Target="/tftpboot" Default="/mnt/cache/TFTPBoot" Mode="rw" Description="Container Path: /tftpboot" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/TFTPBoot</Config>
-  <Config Name="DB Name" Target="DB_NAME" Default="fog" Mode="" Description="Container Variable: DB_NAME" Type="Variable" Display="always" Required="false" Mask="false">fog</Config>
-  <Config Name="DB User" Target="DB_USER" Default="fogusr" Mode="" Description="Container Variable: DB_USER" Type="Variable" Display="always" Required="false" Mask="false">fogusr</Config>
-  <Config Name="DB Password" Target="DB_PASS" Default="f0gp455t4" Mode="" Description="Container Variable: DB_PASS" Type="Variable" Display="always" Required="false" Mask="true">f0gp455t4</Config>
-  <Config Name="DB Root Password" Target="DB_ROOTPASS" Default="" Mode="" Description="Container Variable: DB_ROOTPASS" Type="Variable" Display="always" Required="false" Mask="true"/>
-  <Config Name="External IP" Target="EXTIP" Default="192.168.0.200" Mode="" Description="Container Variable: EXTIP" Type="Variable" Display="always" Required="false" Mask="false">192.168.0.200</Config>
   <Config Name="Server IP" Target="SERVER_IP" Default="192.168.0.200" Mode="" Description="Container Variable: SERVER_IP" Type="Variable" Display="always" Required="false" Mask="false">192.168.0.200</Config>
   <Config Name="FOG Directory" Target="FOG_DIR" Default="/mnt/cache/FOGserver" Mode="" Description="Container Variable: FOG_DIR" Type="Variable" Display="always" Required="false" Mask="false">/mnt/cache/FOGserver</Config>
+  <Config Name="MySQL Directory" Target="mysql" Default="/mnt/cache/FOGserver/mysql" Mode="rw" Description="Container Path: mysql" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/FOGserver/mysql</Config>
 </Container>
 
 
