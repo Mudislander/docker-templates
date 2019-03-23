@@ -9,75 +9,75 @@
   <Privileged>true</Privileged>
   <Support/>
   <Project>https://fogproject.org/</Project>
-  <Overview>A free open-source network computer cloning and management solution</Overview>
+  <Overview>FOG Project can capture, deploy, and manage Windows, Mac OSX, and various Linux distributions.</Overview>
   <Category>Network:Other</Category>
-  <WebUI>http://[IP]:[PORT:80]/fog</WebUI>
+  <WebUI>ttp://[IP]:[PORT:80]/fog</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Mudislander/docker-templates/master/fogproject.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Mudislander/docker-templates/master/img/fogproject_icon.png</Icon>
-  <ExtraParams>--security-opt apparmor=mudislander-fogproject</ExtraParams>
+  <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1553292663</DateInstalled>
+  <DateInstalled>1553331122</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>A free open-source network computer cloning and management solution</Description>
+  <Description>FOG Project can capture, deploy, and manage Windows, Mac OSX, and various Linux distributions.</Description>
   <Networking>
     <Mode>host</Mode>
-    <Publish/>
+    <Publish>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>69</HostPort>
+        <ContainerPort>69</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>69</HostPort>
+        <ContainerPort>69</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>21</HostPort>
+        <ContainerPort>21</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>9000</HostPort>
+        <ContainerPort>9000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/cache/FOGserver/</HostDir>
-      <ContainerDir>/transfer</ContainerDir>
+      <HostDir>/mnt/cache/FOGServer/MySQL</HostDir>
+      <ContainerDir>/var/lib/mysql</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/cache/FOGserver/opt</HostDir>
-      <ContainerDir>/opt/fog</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/cache/FOGserver/images</HostDir>
+      <HostDir>/mnt/cache/FOGServer/images</HostDir>
       <ContainerDir>/images</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/cache/TFTPBoot</HostDir>
-      <ContainerDir>/tftpboot</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/cache/FOGserver/mysql</HostDir>
-      <ContainerDir>mysql</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Environment>
     <Variable>
-      <Value>80</Value>
-      <Name>WEB_HOST_PORT</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
       <Value>192.168.0.200</Value>
-      <Name>SERVER_IP</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>/mnt/cache/FOGserver</Value>
-      <Name>FOG_DIR</Name>
+      <Name>IP</Name>
       <Mode/>
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Veb Host Port" Target="WEB_HOST_PORT" Default="80" Mode="" Description="Container Variable: WEB_HOST_PORT" Type="Variable" Display="always-hide" Required="false" Mask="false">80</Config>
-  <Config Name="FOG Directory" Target="/transfer" Default="/mnt/cache/FOGserver/" Mode="rw" Description="Container Path: /transfer" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/FOGserver/</Config>
-  <Config Name="opt/" Target="/opt/fog" Default="/mnt/cache/FOGserver/opt" Mode="rw" Description="Container Path: /opt/fog" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/FOGserver/opt</Config>
-  <Config Name="Image Directory" Target="/images" Default="" Mode="rw" Description="Container Path: /images" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/FOGserver/images</Config>
-  <Config Name="/tftpboot:/tftpboot" Target="/tftpboot" Default="/mnt/cache/TFTPBoot" Mode="rw" Description="Container Path: /tftpboot" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/TFTPBoot</Config>
-  <Config Name="Server IP" Target="SERVER_IP" Default="192.168.0.200" Mode="" Description="Container Variable: SERVER_IP" Type="Variable" Display="always" Required="false" Mask="false">192.168.0.200</Config>
-  <Config Name="FOG Directory" Target="FOG_DIR" Default="/mnt/cache/FOGserver" Mode="" Description="Container Variable: FOG_DIR" Type="Variable" Display="always" Required="false" Mask="false">/mnt/cache/FOGserver</Config>
-  <Config Name="MySQL Directory" Target="mysql" Default="/mnt/cache/FOGserver/mysql" Mode="rw" Description="Container Path: mysql" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/FOGserver/mysql</Config>
+  <Config Name="MySQL" Target="/var/lib/mysql" Default="" Mode="rw" Description="Container Path: /var/lib/mysql" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/FOGServer/MySQL</Config>
+  <Config Name="Images" Target="/images" Default="" Mode="rw" Description="Container Path: /images" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/FOGServer/images</Config>
+  <Config Name="IP Server" Target="IP" Default="" Mode="" Description="Container Variable: IP" Type="Variable" Display="always" Required="false" Mask="false">192.168.0.200</Config>
+  <Config Name="Port 80" Target="80" Default="" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="false" Mask="false">80</Config>
+  <Config Name="Port 69 TCP" Target="69" Default="" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="false" Mask="false">69</Config>
+  <Config Name="Port 69 UDP" Target="69" Default="" Mode="udp" Description="Container Port: " Type="Port" Display="always" Required="false" Mask="false">69</Config>
+  <Config Name="Port 21" Target="21" Default="" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="false" Mask="false">21</Config>
+  <Config Name="Port 9000" Target="9000" Default="" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="false" Mask="false">9000</Config>
 </Container>
-
 
