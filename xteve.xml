@@ -34,7 +34,7 @@
   <Data>
     <Volume>
       <HostDir>/mnt/user/appdata/xteve</HostDir>
-      <ContainerDir>/root/xteve</ContainerDir>
+      <ContainerDir>/root/.xteve</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
