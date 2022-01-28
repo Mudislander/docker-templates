@@ -11,7 +11,7 @@
   <Project>https://fogproject.org/</Project>
   <Overview>FOG Project can capture, deploy, and manage Windows, Mac OSX, and various Linux distributions.</Overview>
   <Category>Network:Other</Category>
-  <WebUI>ttp://[IP]:[PORT:80]/fog</WebUI>
+  <WebUI>http://[IP]:[PORT:80]/fog</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Mudislander/docker-templates/master/fogproject.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Mudislander/docker-templates/master/img/fogproject_icon.png</Icon>
   <ExtraParams/>
